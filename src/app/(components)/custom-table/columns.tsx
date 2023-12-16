@@ -1,3 +1,4 @@
+"use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { Lesson } from "@/types";
 
@@ -15,6 +16,9 @@ export const columns: ColumnDef<Lesson>[] = [
   },
   {
     accessorKey: "grade",
-    header: "Grade",
+    header: () => <div className="text-right">Grade</div>,
+    cell: ({ row }) => (
+      <div className="text-right">{row.getValue("grade")}</div>
+    ),
   },
 ];
