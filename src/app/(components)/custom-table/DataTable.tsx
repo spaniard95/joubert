@@ -23,16 +23,9 @@ import {
   TableRow,
 } from "@/ui-library/table";
 
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/ui-library/dropdown-menu";
-
 import { Input } from "@/ui-library/input";
-import { Button } from "@/ui-library/button";
-import { DataTableViewOptions, Pagination } from "./components";
+
+import { DataTableViewOptions, Pagination, Toolbar } from "./components";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -66,7 +59,7 @@ function DataTable<TData, TValue>({
 
   return (
     <>
-      <div className="flex items-center py-4">
+      {/* <div className="flex items-center py-4">
         <Input
           placeholder="Filter lessons..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
@@ -76,8 +69,10 @@ function DataTable<TData, TValue>({
           className="max-w-sm"
         />
         <DataTableViewOptions table={table} />
+      </div> */}
+      <div className="flex items-center py-4">
+        <Toolbar table={table} />
       </div>
-
       <div className="rounded-md border">
         <Table>
           {/* HEADER */}

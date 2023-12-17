@@ -55,7 +55,7 @@ function DataTableColumnHeader<TData, TValue>({
             Desc
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={() => column.toggleSorting()}>
+          <DropdownMenuItem onClick={() => column.toggleSorting(undefined)}>
             <ArrowUpDown className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
             Disable sorting
           </DropdownMenuItem>

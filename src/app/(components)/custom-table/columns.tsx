@@ -26,11 +26,14 @@ export const columns: ColumnDef<Lesson>[] = [
   {
     accessorKey: "category",
     header: "Category",
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
+    },
   },
   {
     accessorKey: "grade",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Email" />
+      <DataTableColumnHeader column={column} title="Grade" />
     ),
     cell: ({ row }) => <div className="pl-4">{row.getValue("grade")}</div>,
   },
