@@ -13,13 +13,11 @@ import {
   DropdownMenuSeparator,
 } from "@/ui-library/dropdown-menu";
 
-interface DataTableViewOptionsProps<TData> {
+interface ViewOptionsProps<TData> {
   table: Table<TData>;
 }
 
-function DataTableViewOptions<TData>({
-  table,
-}: DataTableViewOptionsProps<TData>) {
+function ViewOptions<TData>({ table }: ViewOptionsProps<TData>) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -58,4 +56,4 @@ function DataTableViewOptions<TData>({
   );
 }
 
-export default DataTableViewOptions;
+export default ViewOptions;

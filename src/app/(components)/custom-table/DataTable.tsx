@@ -23,9 +23,7 @@ import {
   TableRow,
 } from "@/ui-library/table";
 
-import { Input } from "@/ui-library/input";
-
-import { DataTableViewOptions, Pagination, Toolbar } from "./components";
+import { Pagination, Toolbar } from "./components";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -59,17 +57,6 @@ function DataTable<TData, TValue>({
 
   return (
     <>
-      {/* <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter lessons..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-        <DataTableViewOptions table={table} />
-      </div> */}
       <div className="flex items-center py-4">
         <Toolbar table={table} />
       </div>

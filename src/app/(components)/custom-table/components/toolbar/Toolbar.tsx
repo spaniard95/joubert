@@ -1,19 +1,12 @@
 "use client";
 
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUp,
-  XCircle,
-  HelpCircle,
-} from "lucide-react";
+import { XCircle } from "lucide-react";
 import { Table } from "@tanstack/react-table";
 
 import { Button } from "@/ui-library/button";
 import { Input } from "@/ui-library/input";
 
-import { FacetedFilter } from "./components";
-// import { Arrow } from "@radix-ui/react-dropdown-menu";
+import { FacetedFilter, ViewOptions } from "./components";
 
 export const categories = [
   { label: "math", value: "math" },
@@ -28,10 +21,10 @@ function Toolbar<TData>({ table }: ToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-1 items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter tasks..."
+          placeholder="Filter lessons..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)
@@ -63,7 +56,7 @@ function Toolbar<TData>({ table }: ToolbarProps<TData>) {
           </Button>
         )}
       </div>
-      {/* <DataTableViewOptions table={table} /> */}
+      <ViewOptions table={table} />
     </div>
   );
 }
