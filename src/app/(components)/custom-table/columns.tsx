@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/ui-library/dropdown-menu";
 import { Button } from "@/ui-library/button";
+import { DataTableColumnHeader } from "./components";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -28,19 +29,9 @@ export const columns: ColumnDef<Lesson>[] = [
   },
   {
     accessorKey: "grade",
-    header: ({ column }) => {
-      return (
-        <div className="text-left">
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Grade
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      );
-    },
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Email" />
+    ),
     cell: ({ row }) => <div className="pl-4">{row.getValue("grade")}</div>,
   },
   {
