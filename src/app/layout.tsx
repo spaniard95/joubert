@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,7 +29,35 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {children}
+        <header className="bg-white shadow-md">
+          <nav className="container mx-auto px-6 py-3">
+            <div className="flex justify-between items-center">
+              <div className="flex gap-8">
+                <Link
+                  href="/"
+                  className="text-xl font-semibold text-gray-700 hover:text-gray-900"
+                >
+                  Joubert
+                </Link>
+                <div className="flex gap-4">
+                  {/* <Link
+                    href="/lessons"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    Lessons v1
+                  </Link> */}
+                  <Link
+                    href="/dashboard/lessons"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    Dashboard
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <main className="container mx-auto py-10">{children}</main>
       </body>
     </html>
   );

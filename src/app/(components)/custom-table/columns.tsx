@@ -1,13 +1,14 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
-import { Lesson } from "@/types";
+import { Lesson, Teacher } from "@/types";
 
 import { ColumnHeader, ColumnSettings } from "./components";
+import { Badge } from "@/ui-library/badge";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-export const columns: ColumnDef<Lesson>[] = [
+const lessonsColumns: ColumnDef<Lesson>[] = [
   {
     accessorKey: "title",
     header: "Title",
@@ -15,6 +16,7 @@ export const columns: ColumnDef<Lesson>[] = [
   {
     accessorKey: "category",
     header: "Category",
+    cell: ({ row }) => <Badge variant="boxy">{row.getValue("category")}</Badge>,
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id));
     },
@@ -33,3 +35,23 @@ export const columns: ColumnDef<Lesson>[] = [
     },
   },
 ];
+const teachersColumns: ColumnDef<Teacher>[] = [
+  {
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    id: "actions",
+    cell: () => {
+      // const payment = row.original;
+
+      return <ColumnSettings />;
+    },
+  },
+];
+
+export { lessonsColumns, teachersColumns };

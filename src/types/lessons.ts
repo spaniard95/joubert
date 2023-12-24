@@ -4,3 +4,10 @@ export type Lesson = {
   category: string;
   grade: string;
 };
+
+export type Teacher = {
+  id: string;
+  name: string;
+  email: string;
+  lessons: Lesson[];
+};

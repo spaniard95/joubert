@@ -19,12 +19,13 @@ interface ToolbarProps<TData> {
 
 function Toolbar<TData>({ table }: ToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
+  console.log(table.getAllColumns().map((column) => column.id));
 
   return (
     <div className="flex flex-1 items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter lessons..."
+          placeholder="Filter by title..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)
