@@ -1,4 +1,6 @@
-const getLessons = () => [
+import { Lesson } from "@/types";
+
+const lessons: Array<Lesson> = [
   {
     id: "1",
     title: "Algebra Introduction",
@@ -97,28 +99,33 @@ const getLessons = () => [
   },
   {
     id: "17",
-    title: "Math in Real Life",
-    category: "math",
-    grade: "4",
+    title: "Introduction to Biology",
+    category: "science",
+    grade: "7",
   },
   {
     id: "18",
-    title: "Exploring Measurements",
-    category: "math",
-    grade: "3",
+    title: "Cell Structure and Function",
+    category: "advanced biology",
+    grade: "8",
   },
   {
     id: "19",
-    title: "Understanding Decimals",
-    category: "math",
-    grade: "4",
+    title: "Genetics and Heredity",
+    category: "heath",
+    grade: "9",
   },
   {
     id: "20",
-    title: "Introduction to Ratios",
-    category: "math",
-    grade: "3",
+    title: "Ecology and Ecosystems",
+    category: "biology",
+    grade: "10",
   },
 ];
+
+const getLessons = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return lessons;
+};
 
 export { getLessons };
