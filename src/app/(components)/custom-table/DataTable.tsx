@@ -24,9 +24,10 @@ import {
 } from "@/ui-library/table";
 
 import { Pagination, Toolbar } from "./components";
+import { EnhancedColumnDef } from "./columns";
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
+  columns: EnhancedColumnDef<TData>[];
   data: TData[];
 }
 
@@ -58,7 +59,7 @@ function DataTable<TData, TValue>({
   return (
     <>
       <div className="flex items-center py-4">
-        <Toolbar table={table} />
+        <Toolbar table={table} columns={columns} />
       </div>
       <div className="rounded-md border">
         <Table>

@@ -1,11 +1,11 @@
-export type CuricilumLesson = {
+export type BasicLesson = {
   id: string; // should it be a number?
   title: string;
   category: string;
   grade?: string;
 };
 
-export type SemestersLesson = CuricilumLesson & {
+export type SemesterLesson = BasicLesson & {
   teachers: Number[];
   dateOfExam?: string;
   schedule?: Array<{
@@ -22,9 +22,15 @@ export type Teacher = {
   lessons: Number[];
 };
 
+export type Category = {
+  id: string;
+  label: string;
+  value: string;
+};
+
 export type Semester = {
   id: string;
   year: number;
   season: string;
-  lessons: SemestersLesson[];
+  lessons: SemesterLesson[];
 };
