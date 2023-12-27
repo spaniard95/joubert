@@ -7,19 +7,15 @@ import { Button } from "@/ui-library/button";
 import { Input } from "@/ui-library/input";
 
 import { FacetedFilter, ViewOptions } from "./components";
-
-export const categories = [
-  { label: "math", value: "math" },
-  { label: "science", value: "science" },
-];
+import { EnhancedColumnDef } from "../../columns";
 
 interface ToolbarProps<TData> {
   table: Table<TData>;
+  columns?: EnhancedColumnDef<TData>[];
 }
 
-function Toolbar<TData>({ table }: ToolbarProps<TData>) {
+function Toolbar<TData>({ table, columns = [] }: ToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
-  console.log(table.getAllColumns().map((column) => column.id));
 
   return (
     <div className="flex flex-1 items-center justify-between">
@@ -32,19 +28,17 @@ function Toolbar<TData>({ table }: ToolbarProps<TData>) {
           }
           className="h-8 w-[150px] lg:w-[250px]"
         />
-        {/* {table.getColumn("status") && (
-          <FacetedFilter
-            column={table.getColumn("status")}
-            title="Status"
-            options={statuses}
-          />
-        )} */}
-        {table.getColumn("category") && (
-          <FacetedFilter
-            column={table.getColumn("category")}
-            title="category"
-            options={categories}
-          />
+
+        {columns.map(
+          ({ label, accessorKey, options = [] }) =>
+            options.length > 0 && (
+              <FacetedFilter
+                key={`id-item-${accessorKey}`}
+                column={table.getColumn(accessorKey ?? "")}
+                title={label}
+                options={options}
+              />
+            )
         )}
         {isFiltered && (
           <Button

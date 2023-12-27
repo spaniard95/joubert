@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { CustomNavigationMenu } from "../(components)/navigation-menu";
 
 export default function DashboardLayout({
   children,
@@ -8,8 +8,7 @@ export default function DashboardLayout({
   return (
     <>
       <div className="flex gap-8">
-        <Link href="/dashboard/lessons">Lessons</Link>
-        <Link href="/dashboard/teachers">Teachers</Link>
+        <CustomNavigationMenu />
       </div>
       {children}
     </>

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
@@ -24,16 +23,17 @@ import {
 } from "@/ui-library/table";
 
 import { Pagination, Toolbar } from "./components";
+import { EnhancedColumnDef } from "./columns";
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
+interface DataTableProps<TData> {
+  columns: EnhancedColumnDef<TData>[];
   data: TData[];
 }
 
-function DataTable<TData, TValue>({
+function DataTable<TData>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -58,7 +58,7 @@ function DataTable<TData, TValue>({
   return (
     <>
       <div className="flex items-center py-4">
-        <Toolbar table={table} />
+        <Toolbar table={table} columns={columns} />
       </div>
       <div className="rounded-md border">
         <Table>
