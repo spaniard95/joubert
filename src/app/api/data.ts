@@ -1,6 +1,6 @@
 import { BasicLesson, Semester, Teacher } from "@/types";
 
-export const lessons: Array<CuricilumLesson> = [
+export const lessons: Array<BasicLesson> = [
   {
     id: "1",
     title: "Algebra Introduction",
