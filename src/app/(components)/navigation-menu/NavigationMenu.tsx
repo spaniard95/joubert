@@ -22,35 +22,6 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
 ];
 
 function CustomNavigationMenu() {
@@ -84,20 +55,24 @@ function CustomNavigationMenu() {
                       Curriculum
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      all the lessons teached at the Science university of LSE.
+                      all the lessons teached at the Science university of
+                      Example
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
               <p className="p-3 text-lg font-medium">Academic year 2023</p>
-              <ListItem href="/docs/installation" title="Fall semester 2023">
+              <ListItem
+                href="/dashboard/semester/2023/fall"
+                title="Fall semester 2023"
+              >
                 info about the lessons of the fall semester
               </ListItem>
               <ListItem
-                href="/docs/primitives/typography"
+                href="/dashboard/semester/2023/spring"
                 title="Summer semester 2024"
               >
-                info about the lessons of the summer semester
+                info about the lessons of the spring semester
               </ListItem>
             </ul>
           </NavigationMenuContent>
