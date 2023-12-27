@@ -1,4 +1,4 @@
-import { CuricilumLesson, Semester, Teacher } from "@/types";
+import { BasicLesson, Semester, Teacher } from "@/types";
 
 export const lessons: Array<CuricilumLesson> = [
   {
