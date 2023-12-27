@@ -19,7 +19,7 @@ export type Teacher = {
   id: string;
   name: string;
   email: string;
-  lessons: Number[];
+  lessons?: BasicLesson[];
 };
 
 export type Category = {

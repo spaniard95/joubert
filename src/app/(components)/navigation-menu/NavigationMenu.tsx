@@ -15,14 +15,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/ui-library/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Lessons",
-    href: "/dashboard/lessons",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-];
+// const components: { title: string; href: string; description: string }[] = [
+//   {
+//     title: "Lessons",
+//     href: "/dashboard/lessons",
+//     description:
+//       "A modal dialog that interrupts the user with important content and expects a response.",
+//   },
+// ];
 
 function CustomNavigationMenu() {
   return (
@@ -92,7 +92,7 @@ function CustomNavigationMenu() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, href, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }) => {
   return (
     <li>
       {/* <NavigationMenuItem>

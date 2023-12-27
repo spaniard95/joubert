@@ -1,9 +1,9 @@
 import { DataTable } from "@/app/(components)";
-import { Lesson } from "@/types";
+import { BasicLesson } from "@/types";
 import { lessonsColumns } from "@/app/(components)/custom-table/columns";
 import { getLessons } from "@/app/api/lessons";
 
-async function getData(): Promise<Lesson[]> {
+async function getData(): Promise<BasicLesson[]> {
   return await getLessons();
 }
 

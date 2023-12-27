@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CustomNavigationMenu } from "../(components)/navigation-menu";
 
 export default function DashboardLayout({

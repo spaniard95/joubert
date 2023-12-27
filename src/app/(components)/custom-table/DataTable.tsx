@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
@@ -26,15 +25,15 @@ import {
 import { Pagination, Toolbar } from "./components";
 import { EnhancedColumnDef } from "./columns";
 
-interface DataTableProps<TData, TValue> {
+interface DataTableProps<TData> {
   columns: EnhancedColumnDef<TData>[];
   data: TData[];
 }
 
-function DataTable<TData, TValue>({
+function DataTable<TData>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});

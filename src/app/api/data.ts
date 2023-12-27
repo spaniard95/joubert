@@ -128,43 +128,42 @@ export const teachers: Array<Teacher> = [
     id: "1",
     name: "Mr. Smith",
     email: "smith@email.com",
-    lessons: [1, 2, 3, 4],
+    
   },
   {
     id: "2",
     name: "Dr. Johnson",
     email: "johnson@email.com",
-    lessons: [5, 6],
   },
   {
     id: "3",
     name: "Professor Clarke",
     email: "clarke@email.com",
-    lessons: [7, 8, 9],
+   
   },
   {
     id: "4",
     name: "Ms. Davis",
     email: "davis@email.com",
-    lessons: [10, 11],
+    
   },
   {
     id: "5",
     name: "Dr. Lopez",
     email: "lopez@email.com",
-    lessons: [12, 13],
+    
   },
   {
     id: "6",
     name: "Ms. Taylor",
     email: "taylor@email.com",
-    lessons: [14, 15, 16],
+    
   },
   {
     id: "7",
     name: "Mr. Martinez",
     email: "martinez@email.com",
-    lessons: [17, 18],
+  
   },
 ];
 

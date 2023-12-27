@@ -7,7 +7,7 @@ async function getSemesterData(): Promise<Semester> {
   return await getSemester();
 }
 
-export default async function Semester({ params }: any) {
+export default async function Semester() {
   const data = await getSemesterData();
   console.log(data.lessons);
   return <DataTable data={data.lessons} columns={semesterColumns} />;
